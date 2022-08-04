@@ -1,7 +1,7 @@
 CreateThread(function()
    while true do
 	   Wait(0)
-	        if IsControlPressed(1, 303) then -- Default = "U"
+	        if IsControlPressed(1, 303) and not IsPedInAnyVehicle(GetPlayerPed(-1), false) then -- Default = "U"
 			Draw3DText(GetEntityCoords(PlayerPedId()), 'Release ~g~U~w~ to stand up') --Change language from here
 		    SetPedToRagdoll(PlayerPedId(), 1500, 1500, 0, false, false, false) 
         end
